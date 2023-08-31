@@ -1,0 +1,20 @@
+using UnityEngine;
+
+public class PlayerMovementController : MonoBehaviour
+{
+    [SerializeField] private float _speed;
+    [SerializeField] private Vector3 _direction;
+    [SerializeField] private FixedJoystick _joystick;
+    [SerializeField] private Rigidbody _rb;
+
+    private void Update()
+    {
+        Move();
+    }
+
+    private void Move()
+    {
+        _direction = new Vector3(_joystick.Horizontal, 0, _joystick.Vertical);
+        _rb.AddForce(_direction * _speed * Time.deltaTime, ForceMode.VelocityChange);
+    }
+}
