@@ -22,6 +22,7 @@ namespace YG
         // Ваши сохранения
 
         public int Coins = 1000;
+        public int RecordScore;
         public int SelectedSkinId;
         public List<int> PurchasedSkinsId = new List<int>();
 
