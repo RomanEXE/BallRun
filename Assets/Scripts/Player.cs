@@ -17,6 +17,13 @@ public class Player : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        var interactable = other.GetComponent<IInteractable>();
+
+        if (interactable != null)
+        {
+            interactable.Interact();
+        }
+        
         if (other.transform.CompareTag("Coin"))
         {
             YandexGame.savesData.Coins++;

@@ -9,12 +9,16 @@ public class CoinsText : MonoBehaviour
     private void OnEnable()
     {
         Actions.OnCoinCollected += OnCoinCollected;
+        Actions.OnSkinBought += delegate(Skin skin) { OnCoinCollected(); };
+        YandexGame.GetDataEvent += OnCoinCollected;
     }
 
     private void OnDisable()
     {
         Actions.OnCoinCollected -= OnCoinCollected;
+        YandexGame.GetDataEvent -= OnCoinCollected;
     }
+    
 
     private void OnCoinCollected()
     {

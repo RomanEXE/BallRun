@@ -15,7 +15,7 @@ public class ChunksGenerator : MonoBehaviour
 
     private void Update()
     {
-        if (Player.Instance.transform.position.z > _spawnedChunks[^1]._endPoint.position.z - 100f)
+        if (Player.Instance.transform.position.z > _spawnedChunks[^1]._endPoint.position.z - 150f)
             SpawnChunk();
     }
 
@@ -25,7 +25,7 @@ public class ChunksGenerator : MonoBehaviour
         spawnedChunk.transform.position = _spawnedChunks[^1]._endPoint.position - spawnedChunk._startPoint.position;
         _spawnedChunks.Add(spawnedChunk);
         
-        if (_spawnedChunks.Count > 5)
+        if (_spawnedChunks.Count > 3)
             DestroyChunk();
     }
 

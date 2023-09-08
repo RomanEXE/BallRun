@@ -8,6 +8,9 @@ public class SkinShop : MonoBehaviour
     [SerializeField] private SkinShopUI _shopUI;
     [SerializeField] private Transform _skinShowerPoint;
 
+    [SerializeField] private PlayerSkinchanger _playerSkinchanger;
+    [SerializeField] private EnvironmentSkinChanger _environmentSkinChanger;
+
     private void OnEnable()
     {
         _shopUI.NextSkinBtn.onClick.AddListener(ShowNextSkin);
@@ -30,19 +33,13 @@ public class SkinShop : MonoBehaviour
 
         if (YandexGame.SDKEnabled)
         {
-            for (int i = 0; i < _skins.Length; i++)
-            {
-                if (_skins[i].Id == YandexGame.savesData.SelectedSkinId)
-                {
-                    ChangeSkin(_skins[i]);
-                }
-            }
+            SetSkinsData();
         }
     }
 
     private void SetSkinsData()
     {
-        _skins = Resources.LoadAll<Skin>("/Skins");
+        //_skins = Resources.LoadAll<Skin>("/Skins");
         
         var purchasedSkinsId = YandexGame.savesData.PurchasedSkinsId;
         
@@ -101,11 +98,20 @@ public class SkinShop : MonoBehaviour
         YandexGame.savesData.Coins -= skin.Price;
         YandexGame.savesData.SelectedSkinId = skin.Id;
         YandexGame.savesData.PurchasedSkinsId.Add(skin.Id);
+        
+        Actions.OnSkinBought.Invoke(skin);
     }
 
     private void ChangeSkin(Skin skin)
     {
-        Destroy(Player.Instance.GetComponentInChildren<Skin>().gameObject);
-        Instantiate(skin, Player.Instance.transform);
+        switch (skin.Type)
+        {
+            case (SkinType.PlayerSkin):
+                _playerSkinchanger.ChangeSkin(skin);
+                break;
+            case (SkinType.EnvironmentSkin):
+                _environmentSkinChanger.ChangeSkin(skin);
+                break;
+        }
     }
 }
