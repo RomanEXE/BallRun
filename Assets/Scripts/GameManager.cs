@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        print(Resources.LoadAll<Skin>("Skins").Length);
         _mainMenuUI.SetActive(false);
     }
 

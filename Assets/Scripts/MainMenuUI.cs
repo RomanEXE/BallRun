@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] private Button _startBtn;
-    [SerializeField] private Button _shopBtn;
+    public void OpenDailyChallange()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
