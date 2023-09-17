@@ -1,7 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
 
 public class DailyChallangeUI : MonoBehaviour
 {
@@ -17,7 +16,5 @@ public class DailyChallangeUI : MonoBehaviour
         _rewardForPinTMP.text += _dailyChallange.RewardForPin;
         _droppedCountTMP.text += _dailyChallange.DroppedPinsCount;
         _rewardTMP.text += _dailyChallange.Reward;
-
-        _videoRewardBtn.enabled = YandexGame.nowVideoAd;
     }
 }

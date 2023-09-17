@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,6 +26,7 @@ namespace YG
         public int RecordScore;
         public int SelectedSkinId;
         public List<int> PurchasedSkinsId = new List<int>();
+        public int DailyChallangeLastLaunch;
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
         // Пока выявленное ограничение - это расширение массива

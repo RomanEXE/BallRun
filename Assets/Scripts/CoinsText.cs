@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using YG;
 
@@ -8,19 +9,22 @@ public class CoinsText : MonoBehaviour
     
     private void OnEnable()
     {
-        Actions.OnCoinCollected += OnCoinCollected;
-        Actions.OnSkinBought += delegate(Skin skin) { OnCoinCollected(); };
-        YandexGame.GetDataEvent += OnCoinCollected;
+        Actions.OnCoinCollected += ChangeCoinText;
+        Actions.OnSkinBought += delegate(Skin skin) { ChangeCoinText(); };
     }
 
     private void OnDisable()
     {
-        Actions.OnCoinCollected -= OnCoinCollected;
-        YandexGame.GetDataEvent -= OnCoinCollected;
+        Actions.OnCoinCollected -= ChangeCoinText;
     }
-    
 
-    private void OnCoinCollected()
+    private IEnumerator Start()
+    {
+        yield return new WaitUntil(() => YandexGame.SDKEnabled);
+        ChangeCoinText();
+    }
+
+    private void ChangeCoinText()
     {
         _coinsTMP.text = $"Монеты: {YandexGame.savesData.Coins.ToString()}";
     }
