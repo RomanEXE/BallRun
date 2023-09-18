@@ -1,5 +1,4 @@
 using UnityEngine;
-using YG;
 
 public class Player : MonoBehaviour
 {
@@ -22,13 +21,6 @@ public class Player : MonoBehaviour
         if (interactable != null)
         {
             interactable.Interact();
-        }
-        
-        if (other.transform.CompareTag("Coin"))
-        {
-            YandexGame.savesData.Coins++;
-            Actions.OnCoinCollected.Invoke();
-            Destroy(other.gameObject);
         }
     }
 }

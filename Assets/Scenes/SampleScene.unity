@@ -2778,6 +2778,8 @@ MonoBehaviour:
   - {fileID: 2602453743134403234, guid: a8ab289d849db624087a42de0007fb7a, type: 3}
   - {fileID: 2602453743134403234, guid: e656317d76aa54e46a9684245d6273d0, type: 3}
   - {fileID: 2602453743134403234, guid: aeecd553e140eae42a9e5ea941795a3b, type: 3}
+  - {fileID: 2602453743134403234, guid: 40af79c27e07f7e4588582714951a70f, type: 3}
+  - {fileID: 2602453743134403234, guid: 59d2e151fd16d6648961c816403d7c7c, type: 3}
   _firstChunk: {fileID: 1057455028}
 --- !u!4 &1333829450
 Transform:
@@ -4223,11 +4225,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904652272926108096, guid: 4f963112a4ddaaf469cf7ef01a440d6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1.7412383e-15
+      value: -3.9551797e-15
       objectReference: {fileID: 0}
     - target: {fileID: 1904652272926108096, guid: 4f963112a4ddaaf469cf7ef01a440d6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.6843909e-15
+      value: 4.4772527e-15
       objectReference: {fileID: 0}
     - target: {fileID: 1904652272926108099, guid: 4f963112a4ddaaf469cf7ef01a440d6b, type: 3}
       propertyPath: m_Follow
@@ -4267,11 +4269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904652273856768702, guid: 4f963112a4ddaaf469cf7ef01a440d6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1.9052672e-15
+      value: -3.4238033e-15
       objectReference: {fileID: 0}
     - target: {fileID: 1904652273856768702, guid: 4f963112a4ddaaf469cf7ef01a440d6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.280184e-16
+      value: 1.836517e-15
       objectReference: {fileID: 0}
     - target: {fileID: 1904652273856768702, guid: 4f963112a4ddaaf469cf7ef01a440d6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
