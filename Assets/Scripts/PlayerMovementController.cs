@@ -26,7 +26,5 @@ public class PlayerMovementController : MonoBehaviour
         {
             _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, _maxSpeed);
         }
-
-        print(_rb.velocity.magnitude);
     }
 }

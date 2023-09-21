@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
 public class Pin : MonoBehaviour
 {
-    [SerializeField] private Ray _ray;
+    private Ray _ray;
     [SerializeField] private Transform _rayPoint;
 
     private void Start()

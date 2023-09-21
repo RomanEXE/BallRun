@@ -40,6 +40,7 @@ public class DailyChallange : MonoBehaviour
     public void EndChallenge()
     {
         YandexGame.savesData.Coins += _reward;
+        YandexGame.SaveProgress();
         SceneManager.LoadScene(0);
     }
 

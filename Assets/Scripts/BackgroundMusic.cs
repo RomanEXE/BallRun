@@ -4,6 +4,7 @@ using Random = UnityEngine.Random;
 public class BackgroundMusic : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip[] _clips;
 
     private void Update()
     {
@@ -15,7 +16,7 @@ public class BackgroundMusic : MonoBehaviour
 
     private void ChangeMusic()
     {
-        _audioSource.clip = Resources.LoadAll<AudioClip>("Music")[Random.Range(0, 8)];
+        _audioSource.clip = _clips[Random.Range(0, _clips.Length)];
         _audioSource.Play();
     }
 }

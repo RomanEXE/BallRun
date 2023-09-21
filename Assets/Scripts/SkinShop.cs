@@ -86,7 +86,7 @@ public class SkinShop : MonoBehaviour
     {
         var skin = _skins[_currentSkinIndex];
 
-        if (skin.IsBought)
+        if (skin.IsBought && YandexGame.savesData.SelectedSkinId != skin.Id)
         {
             YandexGame.savesData.SelectedSkinId = skin.Id;
             ChangeSkin(skin);
@@ -98,6 +98,7 @@ public class SkinShop : MonoBehaviour
         YandexGame.savesData.Coins -= skin.Price;
         YandexGame.savesData.SelectedSkinId = skin.Id;
         YandexGame.savesData.PurchasedSkinsId.Add(skin.Id);
+        ChangeSkin(skin);
         
         Actions.OnSkinBought.Invoke(skin);
     }
@@ -113,5 +114,7 @@ public class SkinShop : MonoBehaviour
                 _environmentSkinChanger.ChangeSkin(skin);
                 break;
         }
+        
+        YandexGame.SaveProgress();
     }
 }

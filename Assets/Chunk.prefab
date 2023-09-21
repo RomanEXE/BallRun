@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 2602453744395586378}
   - component: {fileID: 2602453744395586377}
   - component: {fileID: 2347449979883296637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3b42249325323a84eb394eda2631ff66, type: 2}
+  - {fileID: 2100000, guid: 49477867c09cd7549b8b14c76bb639d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 3
-  Name: "\u0424\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0439 \u043C\u044F\u0447"
+  Name: "\u0424\u0443\u0442\u0431\u043E\u043B"
   Price: 100
-  IsBought: 0
+  IsBought: 1
+  Type: 0
