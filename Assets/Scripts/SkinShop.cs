@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using YG;
 
 public class SkinShop : MonoBehaviour
@@ -27,20 +28,16 @@ public class SkinShop : MonoBehaviour
         YandexGame.GetDataEvent -= SetSkinsData;
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
         ShowSkin(_currentSkinIndex);
 
-        if (YandexGame.SDKEnabled)
-        {
-            SetSkinsData();
-        }
+        yield return new WaitUntil(() => YandexGame.SDKEnabled);
+        SetSkinsData();
     }
 
     private void SetSkinsData()
     {
-        //_skins = Resources.LoadAll<Skin>("/Skins");
-        
         var purchasedSkinsId = YandexGame.savesData.PurchasedSkinsId;
         
         for (int j = 0; j < _skins.Length; j++)
@@ -89,7 +86,10 @@ public class SkinShop : MonoBehaviour
         if (skin.IsBought && YandexGame.savesData.SelectedSkinId != skin.Id)
         {
             YandexGame.savesData.SelectedSkinId = skin.Id;
+            YandexGame.SaveProgress();
+            
             ChangeSkin(skin);
+            
             return;
         }
         if (YandexGame.savesData.Coins < skin.Price) return;
@@ -98,8 +98,10 @@ public class SkinShop : MonoBehaviour
         YandexGame.savesData.Coins -= skin.Price;
         YandexGame.savesData.SelectedSkinId = skin.Id;
         YandexGame.savesData.PurchasedSkinsId.Add(skin.Id);
+        YandexGame.SaveProgress();
+
         ChangeSkin(skin);
-        
+
         Actions.OnSkinBought.Invoke(skin);
     }
 
@@ -114,7 +116,5 @@ public class SkinShop : MonoBehaviour
                 _environmentSkinChanger.ChangeSkin(skin);
                 break;
         }
-        
-        YandexGame.SaveProgress();
     }
 }

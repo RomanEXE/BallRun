@@ -38,9 +38,4 @@ public class GameManager : MonoBehaviour
         YandexGame.SaveProgress();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    private void OnApplicationQuit()
-    {
-        YandexGame.SaveProgress();
-    }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using YG;
@@ -26,9 +27,12 @@ public class ScoreCounter : MonoBehaviour
         }
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
         _playerRigidbody = Player.Instance.GetComponent<Rigidbody>();
+
+        yield return new WaitUntil(() => YandexGame.SDKEnabled);
+        _scoreText.text = $"Текущий рекорд: {YandexGame.savesData.RecordScore}";
     }
 
     private void Update()
