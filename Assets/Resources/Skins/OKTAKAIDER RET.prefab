@@ -50,6 +50,7 @@ MonoBehaviour:
   Name: "\u041E\u043A\u0442\u0430-\u0441\u0444\u0435\u0440\u0430"
   Price: 200
   IsBought: 0
+  Type: 0
 --- !u!23 &5620706242232295066
 MeshRenderer:
   m_ObjectHideFlags: 0

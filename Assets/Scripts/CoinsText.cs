@@ -11,21 +11,23 @@ public class CoinsText : MonoBehaviour
     {
         Actions.OnCoinCollected += ChangeCoinText;
         Actions.OnSkinBought += delegate(Skin skin) { ChangeCoinText(); };
+        Actions.OnGameStarted += ChangeCoinText;
     }
 
     private void OnDisable()
     {
         Actions.OnCoinCollected -= ChangeCoinText;
+        Actions.OnGameStarted -= ChangeCoinText;
     }
 
     private IEnumerator Start()
     {
         yield return new WaitUntil(() => YandexGame.SDKEnabled);
-        ChangeCoinText();
+        _coinsTMP.text = $"Монеты: {YandexGame.savesData.Coins}";
     }
 
     private void ChangeCoinText()
     {
-        _coinsTMP.text = $"Монеты: {YandexGame.savesData.Coins.ToString()}";
+        _coinsTMP.text = $"Монеты: {CoinsCounter.Instance.Coins}";
     }
 }

@@ -50,6 +50,7 @@ MonoBehaviour:
   Name: "16 \u0431\u0438\u0442"
   Price: 150
   IsBought: 0
+  Type: 0
 --- !u!23 &7080483095531921465
 MeshRenderer:
   m_ObjectHideFlags: 0

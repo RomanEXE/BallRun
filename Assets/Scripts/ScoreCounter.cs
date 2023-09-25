@@ -32,7 +32,7 @@ public class ScoreCounter : MonoBehaviour
         _playerRigidbody = Player.Instance.GetComponent<Rigidbody>();
 
         yield return new WaitUntil(() => YandexGame.SDKEnabled);
-        _scoreText.text = $"Текущий рекорд: {YandexGame.savesData.RecordScore}";
+        _scoreText.text = $"Рекорд: {YandexGame.savesData.RecordScore}";
     }
 
     private void Update()

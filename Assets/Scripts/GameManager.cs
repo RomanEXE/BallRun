@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-using YG;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +15,7 @@ public class GameManager : MonoBehaviour
     }
     
     [SerializeField] private GameObject _mainMenuUI;
+    [SerializeField] private GameObject _endGameUI;
     
     private void OnEnable()
     {
@@ -30,12 +29,12 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        Actions.OnGameStarted.Invoke();
         _mainMenuUI.SetActive(false);
     }
 
     private void EndGame()
     {
-        YandexGame.SaveProgress();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        _endGameUI.SetActive(true);
     }
 }

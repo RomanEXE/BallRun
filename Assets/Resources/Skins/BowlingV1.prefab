@@ -99,5 +99,5 @@ MonoBehaviour:
   Id: 11
   Name: "\u0411\u043E\u0443\u043B\u0438\u043D\u0433"
   Price: 1000
-  IsBought: 1
+  IsBought: 0
   Type: 0

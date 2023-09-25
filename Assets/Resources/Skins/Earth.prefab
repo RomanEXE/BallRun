@@ -120,3 +120,4 @@ MonoBehaviour:
   Name: "\u0417\u0435\u043C\u043B\u044F"
   Price: 10000
   IsBought: 0
+  Type: 0
