@@ -448,6 +448,11 @@ namespace YG
 
         public static void FullscreenShow() => Instance._FullscreenShow();
 
+        public bool GetFullscreanAdStatus()
+        {
+            return infoYG.fullscreenAdInterval - timerShowAd < 0;
+        }
+
 #if UNITY_EDITOR
         void CloseFullAdInEditor()
         {

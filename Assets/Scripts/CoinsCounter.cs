@@ -19,7 +19,6 @@ public class CoinsCounter : MonoBehaviour
     private void OnEnable()
     {
         Actions.OnCoinCollected += CollectCoin;
-        Actions.OnGameEnd += delegate { YandexGame.savesData.Coins += Coins; };
     }
 
     private void OnDisable()

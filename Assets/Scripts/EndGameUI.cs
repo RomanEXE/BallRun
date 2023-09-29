@@ -7,6 +7,7 @@ using YG;
 
 public class EndGameUI : MonoBehaviour
 {
+    [SerializeField] private GameObject _videoRewardUI;
     [SerializeField] private Button _closeBtn;
     [SerializeField] private TextMeshProUGUI _coinsCountTMP;
     
@@ -24,6 +25,7 @@ public class EndGameUI : MonoBehaviour
 
     private void Start()
     {
+        _videoRewardUI.SetActive(YandexGame.Instance.GetFullscreanAdStatus()); 
         _coinsCountTMP.text = CoinsCounter.Instance.Coins.ToString();
     }
 

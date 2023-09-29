@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using YG;
 
 public class GameManager : MonoBehaviour
 {
