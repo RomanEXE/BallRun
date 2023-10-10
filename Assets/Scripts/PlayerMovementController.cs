@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
@@ -7,6 +8,16 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private Vector3 _direction;
     [SerializeField] private FixedJoystick _joystick;
     [SerializeField] private Rigidbody _rb;
+
+    private void OnEnable()
+    {
+        Actions.OnGameEnd += DisableMovement;
+    }
+
+    private void OnDisable()
+    {
+        Actions.OnGameEnd -= DisableMovement;
+    }
 
     private void Update()
     {
@@ -26,5 +37,11 @@ public class PlayerMovementController : MonoBehaviour
         {
             _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, _maxSpeed);
         }
+    }
+
+    private void DisableMovement()
+    {
+        _rb.isKinematic = true;
+        enabled = false;
     }
 }

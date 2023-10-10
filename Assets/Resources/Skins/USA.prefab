@@ -112,6 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 7
   Name: "\u0421\u0428\u0410"
-  Price: 0
+  Price: 1000
   IsBought: 0
   Type: 0

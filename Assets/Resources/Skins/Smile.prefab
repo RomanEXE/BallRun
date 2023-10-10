@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 571913949090511243}
   - component: {fileID: 3476782355412055598}
   - component: {fileID: 1703755287870997220}
-  - component: {fileID: -1851149718237242768}
   - component: {fileID: -7498703661033114256}
   m_Layer: 0
   m_Name: Smile
@@ -85,23 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-1851149718237242768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910861925872640817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e4365892374892a6907e40b0dc0171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Id: 7
-  Name: 
-  Price: 0
-  IsBought: 0
-  Type: 0
 --- !u!114 &-7498703661033114256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +98,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 9
   Name: "\u0421\u043C\u0430\u0439\u043B\u0438\u043A"
-  Price: 750
+  Price: 2500
   IsBought: 0
   Type: 0

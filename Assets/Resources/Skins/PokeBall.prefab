@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e4365892374892a6907e40b0dc0171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 10
+  Id: 14
   Name: "\u041F\u043E\u043A\u0435\u0431\u043E\u043B"
   Price: 5000
   IsBought: 0

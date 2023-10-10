@@ -99,6 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 4
   Name: "\u0411\u0430\u0441\u043A\u0435\u0442\u0431\u043E\u043B"
-  Price: 100
+  Price: 1000
   IsBought: 0
   Type: 0

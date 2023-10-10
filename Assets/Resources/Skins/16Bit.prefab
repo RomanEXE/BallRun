@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 1
   Name: "16 \u0431\u0438\u0442"
-  Price: 150
+  Price: 500
   IsBought: 0
   Type: 0
 --- !u!23 &7080483095531921465

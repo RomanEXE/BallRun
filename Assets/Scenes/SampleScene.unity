@@ -597,6 +597,7 @@ MonoBehaviour:
   - {fileID: 5134611322740184466, guid: b81101b4d62c64b4aa2fed56aa716a30, type: 3}
   - {fileID: 6311077624612299690, guid: 85a4459c5c69d5744b9d9da1bc17b764, type: 3}
   - {fileID: -2387205002817614283, guid: da22b15cdca3f8347acd09c1fe94a4ed, type: 3}
+  - {fileID: -7498703661033114256, guid: 1913844debb806c4ba774eec5e30b25b, type: 3}
   _shopUI: {fileID: 250286023}
   _skinShowerPoint: {fileID: 1805232804}
   _playerSkinchanger: {fileID: 250286026}
