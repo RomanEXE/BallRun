@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using YG;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-    
+
     [SerializeField] private GameObject _mainMenuUI;
     [SerializeField] private GameObject _endGameUI;
     

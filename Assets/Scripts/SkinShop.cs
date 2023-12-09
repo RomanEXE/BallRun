@@ -72,7 +72,9 @@ public class SkinShop : MonoBehaviour
     private void ShowSkin(int index)
     {
         _currentSkinIndex = index;
+        
         Destroy(_skinShowerPoint.GetChild(0).gameObject);
+        
         var spawnedSkin = Instantiate(_skins[_currentSkinIndex], _skinShowerPoint);
         spawnedSkin.gameObject.layer = LayerMask.NameToLayer("UI");
         
@@ -95,11 +97,8 @@ public class SkinShop : MonoBehaviour
         if (YandexGame.savesData.Coins < skin.Price) return;
         
         skin.IsBought = true;
-        YandexGame.savesData.Coins -= skin.Price;
-        YandexGame.savesData.SelectedSkinId = skin.Id;
-        YandexGame.savesData.PurchasedSkinsId.Add(skin.Id);
-        YandexGame.SaveProgress();
-
+        
+        SaveNewData(skin);
         ChangeSkin(skin);
 
         Actions.OnSkinBought.Invoke(skin);
@@ -116,5 +115,13 @@ public class SkinShop : MonoBehaviour
                 _environmentSkinChanger.ChangeSkin(skin);
                 break;
         }
+    }
+
+    private void SaveNewData(Skin skin)
+    {
+        YandexGame.savesData.Coins -= skin.Price;
+        YandexGame.savesData.SelectedSkinId = skin.Id;
+        YandexGame.savesData.PurchasedSkinsId.Add(skin.Id);
+        YandexGame.SaveProgress();
     }
 }
