@@ -1,5 +1,4 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -25,7 +24,7 @@ public class EndGameUI : MonoBehaviour
 
     private void Start()
     {
-        _videoRewardUI.SetActive(YandexGame.Instance.GetFullscreanAdStatus()); 
+        _videoRewardUI.SetActive(YandexGame.timerShowAd >= YandexGame.Instance.infoYG.fullscreenAdInterval); 
         _coinsCountTMP.text = CoinsCounter.Instance.Coins.ToString();
     }
 

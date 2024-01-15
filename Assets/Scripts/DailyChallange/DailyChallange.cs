@@ -11,19 +11,20 @@ public class DailyChallange : MonoBehaviour
     [SerializeField] private int _reward;
     public int Reward => _reward;
     [SerializeField] private GameObject _resultsUI;
+    [SerializeField] private FixedJoystick _joystick;
     
     private void OnEnable()
     {
         Actions.OnPinDrop += AddDroppedPin;
         Actions.OnGameEnd += ShowResults;
-        YandexGame.RewardVideoEvent += GetVideoReward;
+        YandexGame.RewardVideoEvent += EndChallenge;
     }
 
     private void OnDisable()
     {
         Actions.OnPinDrop -= AddDroppedPin;
         Actions.OnGameEnd -= ShowResults;
-        YandexGame.RewardVideoEvent -= GetVideoReward;
+        YandexGame.RewardVideoEvent -= EndChallenge;
     }
     
     private void AddDroppedPin()
@@ -34,19 +35,14 @@ public class DailyChallange : MonoBehaviour
     private void ShowResults()
     {
         _reward = _droppedPinsCount * _rewardForPin;
+        _joystick.gameObject.SetActive(false);
         _resultsUI.SetActive(true);
     }
 
-    public void EndChallenge()
+    public void EndChallenge(int id)
     {
         YandexGame.savesData.Coins += _reward;
         YandexGame.SaveProgress();
         SceneManager.LoadScene(0);
-    }
-
-    private void GetVideoReward(int a)
-    {
-        _reward *= 2;
-        EndChallenge();
     }
 }

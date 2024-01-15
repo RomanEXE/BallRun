@@ -1,7 +1,5 @@
 ﻿
-using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace YG
 {
@@ -22,6 +20,7 @@ namespace YG
 
         // Ваши сохранения
 
+
         public int Coins = 1000;
         public int RecordScore;
         public int SelectedSkinId;
@@ -29,7 +28,6 @@ namespace YG
         public int DailyChallangeLastLaunch;
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
-        // Пока выявленное ограничение - это расширение массива
 
 
         // Вы можете выполнить какие то действия при загрузке сохранений
@@ -38,17 +36,6 @@ namespace YG
             // Допустим, задать значения по умолчанию для отдельных элементов массива
 
             openLevels[1] = true;
-
-            // Длина массива в проекте должна быть задана один раз!
-            // Если после публикации игры изменить длину массива, то после обновления игры у пользователей сохранения могут поломаться
-            // Если всё же необходимо увеличить длину массива, сдвиньте данное поле массива в самую нижнюю строку кода
-        }
-        
-        public void ChangeValues(int coins = default, int selectedSkinId = default, List<int> purchasedSkinsId = default)
-        {
-            Coins = coins;
-            SelectedSkinId = selectedSkinId;
-            PurchasedSkinsId = purchasedSkinsId;
         }
     }
 }
